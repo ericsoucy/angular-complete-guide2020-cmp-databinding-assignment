@@ -31,5 +31,18 @@
       </ol>
     </div>
   </div>
-  <app-game-control></app-game-control>
+  <app-game-control (eventEmitted)="onEventEmitted($event)"></app-game-control>
+
+  <ul>
+    <li *ngFor="let even of evenNumbers">
+      <app-even [count]="even"></app-even>
+    </li>
+  </ul>
+  <ul>
+    <li *ngFor="let odd of oddNumbers">
+      <app-odd [count]="odd"></app-odd>
+    </li>
+  </ul>
+  <!--<app-even *ngFor="let even of evenNumbers"></app-even>
+  <app-odd *ngFor="let odd of oddNumbers"></app-odd>-->
 </div>

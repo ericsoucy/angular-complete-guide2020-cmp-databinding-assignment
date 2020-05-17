@@ -9,7 +9,7 @@ export class GameControlComponent implements OnInit {
   timer;
   count = 0;
 
-  @Output() event: EventEmitter<any> = new EventEmitter();
+  @Output() eventEmitted: EventEmitter<any> = new EventEmitter();
 
   constructor() {}
 
@@ -19,7 +19,7 @@ export class GameControlComponent implements OnInit {
     console.log("onStartClicked");
     this.timer = setInterval(() => {
       console.log("interval");
-      this.event.emit(++this.count);
+      this.eventEmitted.emit(++this.count);
     }, 1000);
   }
 
